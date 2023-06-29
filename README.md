@@ -4,5 +4,5 @@ This is a game engine made by me on top of GameMaker Studios. It powers my top-d
 
 What's inside:
 - [x] Django-like apps structure
-- [ ] Pytest-inspired testing framework
+- [x] Pytest-inspired testing framework
 - [ ] Nuxt-inspired store, mutations and rendering
