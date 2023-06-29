@@ -6,6 +6,7 @@
     {"id":{"name":"_compare","path":"scripts/_compare/_compare.yy",},"order":1,},
     {"id":{"name":"__application_start","path":"scripts/__application_start/__application_start.yy",},"order":0,},
     {"id":{"name":"_gmtest_run","path":"scripts/_gmtest_run/_gmtest_run.yy",},"order":0,},
+    {"id":{"name":"room_application","path":"rooms/room_application/room_application.yy",},"order":4,},
     {"id":{"name":"_application_abc","path":"scripts/_application_abc/_application_abc.yy",},"order":1,},
     {"id":{"name":"_gmtest_collect","path":"scripts/_gmtest_collect/_gmtest_collect.yy",},"order":1,},
     {"id":{"name":"_assert","path":"scripts/_assert/_assert.yy",},"order":2,},
@@ -14,7 +15,7 @@
     {"id":{"name":"_application_create","path":"scripts/_application_create/_application_create.yy",},"order":0,},
     {"id":{"name":"_print","path":"scripts/_print/_print.yy",},"order":0,},
     {"id":{"name":"_gmtest_report","path":"scripts/_gmtest_report/_gmtest_report.yy",},"order":3,},
-    {"id":{"name":"room_application","path":"rooms/room_application/room_application.yy",},"order":0,},
+    {"id":{"name":"room_meta","path":"rooms/room_meta/room_meta.yy",},"order":0,},
   ],
   "Options": [
     {"name":"Linux","path":"options/linux/options_linux.yy",},
@@ -30,6 +31,7 @@
     "children": [],
   },
   "RoomOrderNodes": [
+    {"roomId":{"name":"room_meta","path":"rooms/room_meta/room_meta.yy",},},
     {"roomId":{"name":"room_application","path":"rooms/room_application/room_application.yy",},},
   ],
   "Folders": [
@@ -42,6 +44,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"abc","folderPath":"folders/apps/application/abc.yy","order":3,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"actions","folderPath":"folders/apps/application/actions.yy","order":2,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"tests","folderPath":"folders/apps/application/tests.yy","order":1,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"meta","folderPath":"folders/apps/meta.yy","order":3,},
   ],
   "AudioGroups": [
     {"resourceType":"GMAudioGroup","resourceVersion":"1.3","name":"audiogroup_default","targets":-1,},

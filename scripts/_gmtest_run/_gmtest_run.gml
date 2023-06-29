@@ -4,7 +4,6 @@ function _gmtest_prerun_test() {
 	for (var global_index = 0; global_index < array_length(global.PURGABLE_GLOBALS); global_index++) {
 		var global_key = global.PURGABLE_GLOBALS[global_index]
 		variable_global_set(global_key, undefined)
-		print("purging")
 	}
 }
 

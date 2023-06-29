@@ -4,11 +4,17 @@ function start_application() {
 	
 	
 	// 1. Create component
-	
 	create_application()
-	
-	
-	// 2. Run component
 
-	//application_start_menu()
+	
+	// 2a. Run component (switch room)
+
+	room_goto(room_application)
+}
+
+
+function poststart_application() {
+	// 2b. Run component (object created)
+	
+	// application_start_menu()
 }

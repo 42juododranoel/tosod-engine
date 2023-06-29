@@ -41,8 +41,8 @@ function _gmtest_report(results) {
 	}
 	
 	print()
+	print("Total:", test_count)
 	print("OK:", ok_count)
 	print("Failed:", fail_count)
-	print("Total:", test_count)
 	print()
 }
