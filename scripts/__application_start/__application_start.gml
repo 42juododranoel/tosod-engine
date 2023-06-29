@@ -1,7 +1,6 @@
 function start_application() {
-	// Your game entrypoint.
-	// Call this function in game start event handler of object_application.
-	
+	// Use this function to start application.
+	// The application automatically starts menu after loading.
 	
 	// 1. Create component
 	create_application()
