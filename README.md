@@ -6,3 +6,8 @@ What's inside:
 - [x] Django-like apps structure
 - [x] Pytest-inspired testing framework
 - [ ] Nuxt-inspired store, mutations and rendering
+- [ ] Menu app - start/exit your game
+- [ ] Game app - manage plot progress and NPCs
+- [ ] Location app - render locations
+- [ ] Entity app - commandable objects
+- [ ] ...
