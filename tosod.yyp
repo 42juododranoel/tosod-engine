@@ -3,6 +3,17 @@
   "resourceVersion": "1.6",
   "name": "tosod",
   "resources": [
+    {"id":{"name":"_compare","path":"scripts/_compare/_compare.yy",},"order":1,},
+    {"id":{"name":"__application_start","path":"scripts/__application_start/__application_start.yy",},"order":0,},
+    {"id":{"name":"_gmtest_run","path":"scripts/_gmtest_run/_gmtest_run.yy",},"order":0,},
+    {"id":{"name":"_application_abc","path":"scripts/_application_abc/_application_abc.yy",},"order":1,},
+    {"id":{"name":"_gmtest_collect","path":"scripts/_gmtest_collect/_gmtest_collect.yy",},"order":1,},
+    {"id":{"name":"_assert","path":"scripts/_assert/_assert.yy",},"order":2,},
+    {"id":{"name":"_application_test","path":"scripts/_application_test/_application_test.yy",},"order":0,},
+    {"id":{"name":"_gmtest","path":"scripts/_gmtest/_gmtest.yy",},"order":2,},
+    {"id":{"name":"_application_create","path":"scripts/_application_create/_application_create.yy",},"order":0,},
+    {"id":{"name":"_print","path":"scripts/_print/_print.yy",},"order":0,},
+    {"id":{"name":"_gmtest_report","path":"scripts/_gmtest_report/_gmtest_report.yy",},"order":3,},
     {"id":{"name":"room_application","path":"rooms/room_application/room_application.yy",},"order":0,},
   ],
   "Options": [
@@ -12,7 +23,7 @@
     {"name":"Windows","path":"options/windows/options_windows.yy",},
     {"name":"operagx","path":"options/operagx/options_operagx.yy",},
   ],
-  "defaultScriptType": 0,
+  "defaultScriptType": 1,
   "isEcma": false,
   "configs": {
     "name": "Default",
@@ -22,7 +33,15 @@
     {"roomId":{"name":"room_application","path":"rooms/room_application/room_application.yy",},},
   ],
   "Folders": [
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"application","folderPath":"folders/application.yy","order":1,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"apps","folderPath":"folders/apps.yy","order":2,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"_builtins","folderPath":"folders/apps/_builtins.yy","order":2,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"actions","folderPath":"folders/apps/_builtins/actions.yy","order":1,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"_gmtest","folderPath":"folders/apps/_gmtest.yy","order":1,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"actions","folderPath":"folders/apps/_gmtest/actions.yy","order":1,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"application","folderPath":"folders/apps/application.yy","order":0,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"abc","folderPath":"folders/apps/application/abc.yy","order":3,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"actions","folderPath":"folders/apps/application/actions.yy","order":2,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"tests","folderPath":"folders/apps/application/tests.yy","order":1,},
   ],
   "AudioGroups": [
     {"resourceType":"GMAudioGroup","resourceVersion":"1.3","name":"audiogroup_default","targets":-1,},
