@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "_application_test",
+  "name": "__engine_start",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "tests",
-    "path": "folders/apps/application/tests.yy",
+    "name": "actions",
+    "path": "folders/apps/engine/actions.yy",
   },
 }
