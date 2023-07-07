@@ -15,9 +15,9 @@ What's inside:
 
 1. Everything which is displayed at every frame on screen should be declaratively described with three types of storages: store, cache and idmap. It is prohibited to render anything which is not saved in either store, cache or idmap.
 2. Every change to the store, cache or idmap should not happen on the fly and instead be represented as a query. 
-3. Any piece of code should be tied to a specific component, which should be either a singleton or an instance.  
+3. Any piece of code (except for utils) should be tied to a specific component, which should be either a singleton or an instance.  
 4. No controlling objects as instances allowed on instance layers. Controlling objects should be in-memory, so that they would not have to be carried from one layer to another and managed. Only entity instances should be present on instance layers.
-5. It is prohibited to store in cache anything which cannot be serialized. It is allowed to store unserializable data structures in cache and idmap, given that they are used more than once.
+5. It is prohibited to keep in store anything which cannot be serialized. It is allowed to store unserializable data structures in cache and idmap, given that they are used more than once.
 
 
 ### App Types
