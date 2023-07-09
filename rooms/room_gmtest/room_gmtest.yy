@@ -45,7 +45,7 @@
     "PhysicsWorldPixToMetres": 0.1,
   },
   "parent": {
-    "name": "_gmtest",
-    "path": "folders/apps/_gmtest.yy",
+    "name": "_tosotest",
+    "path": "folders/apps/_tosotest.yy",
   },
 }
