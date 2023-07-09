@@ -9,12 +9,15 @@ What's inside:
 - [ ] Menu app - start/exit your game
 - ...
 
-## App structure
+## Documentation
 
 ### General Rules
 
-1. No controlling objects as instances allowed on instance layers. Controlling objects should be in-memory, so that they would not have to be carried from one layer to another and managed. Only entity instances should be present on entity layers.
-2. It is allowed to store unserializable data structures in cache to avoid calling getters, but it is prohibited to keep in cache anything that is used only once
+1. Everything which is displayed at every frame on screen should be declaratively described with three types of storages: store, cache and idmap. It is prohibited to render anything which is not saved in either store, cache or idmap.
+2. Every change to the store, cache or idmap should not happen on the fly and instead be represented as a query. 
+3. Any piece of code (except for utils) should be tied to a specific component, which should be either a singleton or an instance.  
+4. No controlling objects as instances allowed on instance layers. Controlling objects should be in-memory, so that they would not have to be carried from one layer to another and managed. Only entity instances should be present on instance layers.
+5. It is prohibited to keep in store anything which cannot be serialized. It is allowed to store unserializable data structures in cache and idmap, given that they are used more than once.
 
 
 ### App Types
@@ -24,6 +27,7 @@ There are two types of apps:
 1. Singleton app doesn't have a logical id and is accessed by its scope name (`application`, `menu`, `game`, etc), for example `start_application()`
 2. Instance app has a logical id and is accessed by it, for example `command_entity(entity_id, command)`
 
+
 ### Method Types
 
 There are two types of methods:
@@ -31,15 +35,13 @@ There are two types of methods:
 1. ABC method is very strict and is used as app's interface with engine
 2. Freeform method is more relaxed and is used mostly as app's interfaces with other apps
 
-### ABC Methods
-
 Each app should have following ABC methods:
 
 - `get_COMPONENT_constants` - must return struct of default app constants. Three keys are mandatory: `NAME` (component name), `STORE_KEYS` (allowed store keys) and `CACHE_KEYS` (allowed cache keys)
 - `get_COMPONENT_store` - must return struct of default store keys (no values, all undefined)
 - `get_COMPONENT_cache` - must return struct of default cache keys (no values, all undefined)
 
-### Freeform Methods
+The following freeform methods exist:
 
 - `start_COMPONENT` - 1) defines constants, 2) defines variables, 3) sets component store and cache by getting them with `get_COMPONENT_store` and `get_COMPONENT_cache`, after that calls `create_singleton` or `create_instance`, 4) runs some code associated with component BEFORE entering its room (if it has a room). This is normally called by `PARENT_start_CHILD` or directly.
 - `poststart_COMPONENT` - 5) runs some code associated with component AFTER entering its room (if it has a room). This is normally run by room creation code.
