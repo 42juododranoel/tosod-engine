@@ -5,7 +5,7 @@ function get_application_start_testsuit() {
 		tests: {
 			set_application_storages: {
 				test: function() {
-					global.APPLICATION.start()
+					global.apps.application.start()
 					
 					assert(global.store.application, {})
 					assert(global.cache.application, {state: undefined})

@@ -13,14 +13,14 @@ function tosotest_report(results) {
 		var test_name = test_names[test_name_index]
 		var test_result = variable_struct_get(results.tests, test_name)
 		
-		if test_result.status == global.TOSOTEST.RESULTS.FAIL {				
+		if test_result.status == global.tosotest.RESULTS.FAIL {				
 			var long_message = test_result.error.longMessage
 			long_message = string_replace_all(long_message, "\n\n", "\n")
 			long_message = string_replace_all(long_message, "\n", "\n| ")
 
 			print()
 			print("+—————————————————————————————————————————————————————————————————————————————————————")
-			print("|", test_result.name, "failed:", test_result.error.message)
+			print("|", test_result.name, test_result.error.message)
 			print("+—————————————————————————————————————————————————————————————————————————————————————")
 			print("|", long_message)
 			for (var stacktace_line_index = 0; stacktace_line_index < array_length(test_result.error.stacktrace); stacktace_line_index++) {

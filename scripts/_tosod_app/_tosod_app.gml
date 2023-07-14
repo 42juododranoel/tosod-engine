@@ -1,25 +1,20 @@
 function App(_name) constructor {
 	name = _name
 
-	array_push(global.APPS, self)
-
-	// Constants
-	
-	STORE_KEYS = undefined
-	CACHE_KEYS = undefined
-
 
 	// ABC
 
-	static initialize = function() {
-		// Prepare this app for operation
-		self.STORE_KEYS = variable_struct_get_names(self.get_store())
-		self.CACHE_KEYS = variable_struct_get_names(self.get_cache())
-	}
+	static set_constants = function() {
 	
-	static start = function() {
-		// Create store and cache for this particular singleton component
+	}
 
+	static set_variables = function() {
+	
+	}
+
+	static set_storages = function() {
+		// Set store and cache in global namespace, if not already set.
+		
 		var store = self.get_store()
 		var cache = self.get_cache()
 
@@ -36,8 +31,27 @@ function App(_name) constructor {
 		remember(self, "start", cache)
 	}
 
+	static run_component = function() {
+		// Run code after all setup is done.
+	}
+
+	static postrun_component = function() {
+		// Run code after entering component's room.
+	}
+
+	static start = function() {
+		// Create store and cache for this particular component, if singleton.
+
+		self.set_constants()
+		self.set_variables()
+		self.set_storages()
+		self.run_component()
+	}
+
 	static poststart = function() {
-		// Run after entering component's room (if any)
+		// Run after entering component's room, if singleton and has one.
+		
+		self.postrun_component()
 	}
 
 

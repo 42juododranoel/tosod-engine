@@ -1,7 +1,7 @@
 {
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
-  "name": "room_gmtest",
+  "name": "room_tosotest",
   "isDnd": false,
   "volume": 1.0,
   "parentRoom": null,

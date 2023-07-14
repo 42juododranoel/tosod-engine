@@ -5,7 +5,8 @@ function _store(parent_storage, allowed_keys_name, log_phrase, scope, scope_id, 
 	// Validate inputs
 	var keys = variable_struct_get_names(items)	
 	if check_defined(allowed_keys_name) {
-		var allowed_keys = variable_struct_get(scope, allowed_keys_name)
+		var allowed_keys_storage = variable_struct_get(global.tosoengine, allowed_keys_name)
+		var allowed_keys = variable_struct_get(allowed_keys_storage, scope.name)
 		for (var key_index = 0; key_index < array_length(keys); key_index++) {
 			var key = keys[key_index]
 			var is_key_allowed = array_in(allowed_keys, key)

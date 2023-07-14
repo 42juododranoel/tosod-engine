@@ -1,1 +1,1 @@
-poststart_application()
+global.apps.application.poststart()

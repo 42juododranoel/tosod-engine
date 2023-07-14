@@ -13,25 +13,7 @@ function ApplicationApp(): App("application") constructor {
 
 	// ABC
 	
-	static super_start = start
-	static start = function() {
-		// Use this function to start application.
-		// The application automatically starts menu after loading.
-
-	
-		// 1. Define constants
-
-
-		// 2. Define variables
-
-
-		// 3. Create storages
-	
-		super_start()
-
-	
-		// 4. Run before switching room
-
+	static run_component = function() {
 		room_goto(room_application)
 	}
 	
@@ -58,7 +40,7 @@ function ApplicationApp(): App("application") constructor {
 		return {
 			application_started: {
 				fixture: function() {
-					global.APPLICATION.start()
+					global.apps.application.start()
 				},
 			}
 		}

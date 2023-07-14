@@ -19,9 +19,11 @@ function tosotest_collect() {
 	}
 	
 	// For each app in apps
-	for (var app_index = 0; app_index < array_length(global.APPS); app_index++) {
+	var app_names = variable_struct_get_names(global.apps)
+	for (var app_index = 0; app_index < array_length(app_names); app_index++) {
 		// Testing works app by app
-		var app = global.APPS[app_index]
+		var app_name = app_names[app_index]
+		var app = variable_struct_get(global.apps, app_name)
 		tree.statistics.app_count += 1
 		
 		var branch = {

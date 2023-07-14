@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "_tosod",
-    "path": "folders/apps/_tosod.yy",
+    "name": "helpers",
+    "path": "folders/apps/_tosoengine/helpers.yy",
   },
 }

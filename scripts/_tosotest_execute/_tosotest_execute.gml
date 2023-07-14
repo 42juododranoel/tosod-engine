@@ -1,5 +1,8 @@
 function tosotest_preexecute_test() {
-
+	// Purge storages
+	global.store = {}
+	global.cache = {}
+	global.idmap = {}
 }
 
 
@@ -54,7 +57,7 @@ function tosotest_execute(tree) {
 					print("  " + signature_name + "...")
 
 					// Run this signature
-					var status = global.TOSOTEST.RESULTS.OK
+					var status = global.tosotest.RESULTS.OK
 					var error = undefined
 
 					tosotest_preexecute_test()
@@ -86,7 +89,7 @@ function tosotest_execute(tree) {
 						}						
 						results.statistics.passed += 1
 					} catch(exception) {
-						status = global.TOSOTEST.RESULTS.FAIL
+						status = global.tosotest.RESULTS.FAIL
 						error = exception
 						results.statistics.failed += 1
 					} finally {
@@ -101,7 +104,7 @@ function tosotest_execute(tree) {
 					tosotest_postexecute_test()
 
 					// Leave if exitfirst
-					if global.TOSOTEST.EXITFIRST and status == global.TOSOTEST.RESULTS.FAIL {
+					if global.tosotest.EXITFIRST and status == global.tosotest.RESULTS.FAIL {
 						break
 					}
 				}

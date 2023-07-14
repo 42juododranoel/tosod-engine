@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "_test_engine_creation_code",
+  "name": "_tosoengine_app",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "tests",
-    "path": "folders/apps/engine/tests.yy",
+    "name": "abc",
+    "path": "folders/apps/_tosoengine/abc.yy",
   },
 }

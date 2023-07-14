@@ -11,8 +11,8 @@ function TosotestApp(): App("tosotest") constructor {
 	
 	// ABC
 	
-	static start = function() {
-		// Run this function to start testing
+	static run_component = function() {
+		// Start testing
 
 		var tree = tosotest_collect()
 		var results = tosotest_execute(tree)
