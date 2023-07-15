@@ -26,4 +26,4 @@ What's inside:
 - [x] pytest parametrizing
 - [x] store, cache, idmap creation
 - [ ] pytest fixtures in tosotest
-- [ ] switching rooms in tosotest
+- [ ] switching rooms in tosotest (flat test signature array, enter test room before each test, run test after room was created, run assert on room start event, start next test immediately after)
