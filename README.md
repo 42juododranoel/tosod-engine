@@ -13,7 +13,7 @@ What's inside:
 ### General Rules
 
 1. Everything which is displayed at every frame on screen should be declaratively described with three types of storages: store, cache and idmap. It is prohibited to render any piece of code which is not saved in either store, cache or idmap.
-2. It is prohibited to keep any non-framework related data in any places other than under `content` folder. This means that code should be complitely separated from plot, characters, sprites, dialogs, and other data.
+2. It is prohibited to keep any non-framework related data in any places other than under `content` folder. This means that code should be complitely separated from plot, characters, sprites, dialogs, and other data. The data should be 100% declarative, meaning that you should be able to change anything in plot by editing structs and arrays, without touching any code components at all.
 3. Every change to the store, cache or idmap should not happen on the fly and should be instead represented as a query. 
 4. Any piece of code should be tied to a specific isolated app (application, game, menu, entity, location, slideshow, dialog, order). Every app should be generally similar to the others in terms of structure (store, cache, idmap, start, stop, testsuits, fixtures)
 5. No controlling objects as instances allowed on instance layers. Controlling objects should be in-memory, so that they would not have to be carried from one layer to another and managed. Only entity instances should be present on instance layers.
