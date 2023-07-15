@@ -6,7 +6,7 @@ What's inside:
 - [x] Django-like apps structure
 - [x] Pytest-inspired testing framework with paramerizing
 - [x] Nuxt-inspired store, mutations and rendering
-- ...
+- [ ] ...
 
 ## Documentation
 
@@ -18,12 +18,22 @@ What's inside:
 4. No controlling objects as instances allowed on instance layers. Controlling objects should be in-memory, so that they would not have to be carried from one layer to another and managed. Only entity instances should be present on instance layers.
 5. It is prohibited to keep in store anything which cannot be serialized, but it is allowed to keep unserializable data structures in cache and idmap, given that they are used more than once.
 
+## Apps
 
-### To Do
+### Tosoengine
+
+Tosoengine is the first and most important app, which represents this game engine. It is responsible for initializing apps, storages, and running tosotest or application, depending on the context.
+
+### Tosotest
+
+Tosotest is a testing framework. The goal behind it is to be as pytest-like as possible, supporting fixtures and parametrizing, but not too bloated, since GameMaker is not good for metaprogramming and developing packages.
+
+## To Do
 
 - [x] django app structure
 - [x] tests inside testsuits inside apps
-- [x] pytest parametrizing
-- [x] store, cache, idmap creation
-- [ ] pytest fixtures in tosotest
-- [ ] switching rooms in tosotest (flat test signature array, enter test room before each test, run test after room was created, run assert on room start event, start next test immediately after)
+- [x] pytest's parametrizing
+- [x] store and cache creation
+- [ ] pytest's fixtures
+- [ ] switching rooms in tests (flat test signature array, enter test room before each test, run test after room was created, run assert on room start event, start next test immediately after)
+- [ ] menu app (new game, continue game, exit, load savefile, write savefile)
