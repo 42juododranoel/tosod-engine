@@ -22,11 +22,11 @@ What's inside:
 
 ### Tosoengine
 
-Tosoengine is the first and most important app, which represents this game engine. It is responsible for initializing apps, storages, and running tosotest or application, depending on the context.
+Tosoengine is the first and most important app, which represents this game engine. It is responsible for initializing apps and storages, and running tosotest or application, depending on how the game was called.
 
 ### Tosotest
 
-Tosotest is a testing framework. The goal behind it is to be as pytest-like as possible, supporting fixtures and parametrizing, but not too bloated, since GameMaker is not good for metaprogramming and developing packages.
+Tosotest is a testing framework. The goal behind it is to be as pytest-like as possible, supporting fixtures and parametrizing, but not too complex, since GameMaker is not good for metaprogramming and developing packages.
 
 ## To Do
 
