@@ -27,4 +27,3 @@ What's inside:
 - [x] store, cache, idmap creation
 - [ ] pytest fixtures in tosotest
 - [ ] switching rooms in tosotest
-- [ ] split App into App and Component (SingletonComponent/InstanceComponent)
