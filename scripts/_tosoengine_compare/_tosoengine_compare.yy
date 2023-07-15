@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "_tosod_storage",
+  "name": "_tosoengine_compare",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {

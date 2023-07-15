@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "_tosod_assert",
+  "name": "_tosoengine_variable",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {

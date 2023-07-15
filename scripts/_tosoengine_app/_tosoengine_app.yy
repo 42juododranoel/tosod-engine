@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "abc",
-    "path": "folders/apps/_tosoengine/abc.yy",
+    "name": "helpers",
+    "path": "folders/apps/_tosoengine/helpers.yy",
   },
 }

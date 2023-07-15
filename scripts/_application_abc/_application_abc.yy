@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "_application_app",
+  "name": "_application_abc",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {

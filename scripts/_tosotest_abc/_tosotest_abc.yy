@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "_tosod_log",
+  "name": "_tosotest_abc",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "helpers",
-    "path": "folders/apps/_tosoengine/helpers.yy",
+    "name": "abc",
+    "path": "folders/apps/_tosotest/abc.yy",
   },
 }

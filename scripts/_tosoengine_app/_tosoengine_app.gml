@@ -1,55 +1,78 @@
-function TosoengineApp(): App("tosoengine") constructor {
-	// Constants
-	
-	// Keys are used to validate remember() and mutate() call payloads.
-	STORE_KEYS = {}
-	CACHE_KEYS = {}
+function App(_name) constructor {
+	name = _name
 
 
 	// ABC
 
 	static set_constants = function() {
-		// Set apps
-		global.apps.application = new ApplicationApp()
-
-		// Set STORE_KEYS and CACHE_KEYS for apps
-		var app_names = variable_struct_get_names(global.apps)
-		for (var app_index = 0; app_index < array_length(app_names); app_index++) {			
-			var app_name = app_names[app_index]
-			var app = variable_struct_get(global.apps, app_name)
-			
-			var app_store_keys = variable_struct_get_names(app.get_store())
-			variable_struct_set(self.STORE_KEYS, app_name, app_store_keys)
-
-			var app_cache_keys = variable_struct_get_names(app.get_cache())
-			variable_struct_set(self.CACHE_KEYS, app_name, app_cache_keys)
-		}
+	
 	}
 
 	static set_variables = function() {
-		// Set storages
-		global.store = {}
-		global.cache = {}
-		global.idmap = {}
+	
+	}
+
+	static set_storages = function() {
+		// Set store and cache in global namespace, if not already set.
+		
+		var store = self.get_store()
+		var cache = self.get_cache()
+
+		if variable_struct_exists(global.store, self.name) {
+			show_error("Store " + self.name + " already exists", true)
+		}
+		variable_struct_set(global.store, self.name, {})
+		mutate(self, "start", store)
+
+		if variable_struct_exists(global.cache, self.name) {
+			show_error("Cache " + self.name + " already exists", true)
+		}
+		variable_struct_set(global.cache, self.name, {})
+		remember(self, "start", cache)
 	}
 
 	static run_component = function() {
-		if debug_mode {
-			// Run tests
-			global.tosotest.start()
-		} else {
-			// Run game
-			global.apps.application.start()
-		}
+		// Run code after all setup is done.
+	}
+
+	static postrun_component = function() {
+		// Run code after entering component's room, if any.
+	}
+
+	static start = function() {
+		// Create store and cache for this particular component, if singleton.
+
+		self.set_constants()
+		self.set_variables()
+		self.set_storages()
+		self.run_component()
+	}
+
+	static poststart = function() {
+		// Run after entering component's room, if singleton and has one.
+		
+		self.postrun_component()
+	}
+
+
+	// Storages
+
+	static get_store = function() {
+		return {}
+	}
+	
+	static get_cache = function() {
+		return {}
 	}
 
 
 	// Tests
 
 	static get_testsuits = function() {
-		return [
-			get_tosoengine_start_testsuit,
-			get_tosoengine_room_creation_code_testsuit,
-		]
+		return []
+	}
+
+	static get_fixtures = function() {
+		return {}
 	}
 }

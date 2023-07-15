@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "_tosod_struct",
+  "name": "_tosoengine_print",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
