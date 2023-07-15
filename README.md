@@ -17,6 +17,7 @@ What's inside:
 3. Any piece of code should be tied to a specific isolated app (application, game, menu, entity, location, slideshow, dialog, order). Every app should be generally similar to the others in terms of structure (store, cache, idmap, start, stop, testsuits, fixtures)
 4. No controlling objects as instances allowed on instance layers. Controlling objects should be in-memory, so that they would not have to be carried from one layer to another and managed. Only entity instances should be present on instance layers.
 5. It is prohibited to keep in store anything which cannot be serialized, but it is allowed to keep unserializable data structures in cache and idmap, given that they are used more than once.
+6. This repository doesn't have a configured CI, but each commit to the `main` branch is guaranteed to have all tests passing on my machine. I don't know if is possible to run CI for GameMaker projects, maybe I will try something in the future.
 
 ## Apps
 
