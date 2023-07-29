@@ -47,7 +47,7 @@ function get_application_start_testsuit() {
 	return {
 		name: "start",
 		tests: {
-            // Tests go here
+			// Tests go here
 		}
 	}
 }
