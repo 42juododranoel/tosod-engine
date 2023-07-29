@@ -12,6 +12,16 @@ function get_application_start_testsuit() {
 				}
 			},
 			//
+			change_room: {
+				test: function() {
+					global.apps.application.start()
+
+					on_room_start(function() {
+						assert(room, room_application)
+					})
+				}
+			}
+			//
 		}
 	}
 }

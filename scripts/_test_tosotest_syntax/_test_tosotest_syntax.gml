@@ -16,6 +16,14 @@ function get_tosotest_syntax_testsuit() {
 				},
 			},
 			//
+			on_room_start_callback: {
+				test: function() {
+					on_room_start(function() {
+						assert(room, room_tosotest)				
+					})
+				},
+			},
+			//
 		}
 	}
 }

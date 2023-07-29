@@ -12,15 +12,19 @@ function get_tosoengine_start_testsuit() {
 			//
 			set_store_keys: {
 				test: function() {
-					var store_keys = variable_struct_get_names(global.tosoengine.STORE_KEYS)
-					assert(store_keys, ["tosoengine", "application", "tosotest"])
+					assert(global.tosoengine.STORE_KEYS.tosoengine, [])
+					assert(global.tosoengine.STORE_KEYS.tosotest, [])
+					assert(global.tosoengine.STORE_KEYS.application, [])
+					assert(array_length(variable_struct_get_names(global.tosoengine.STORE_KEYS)), 3)
 				},
 			},
 			//
 			set_cache_keys: {
 				test: function() {
-					var cache_keys = variable_struct_get_names(global.tosoengine.CACHE_KEYS)
-					assert(cache_keys, ["tosoengine", "application", "tosotest"])
+					assert(global.tosoengine.CACHE_KEYS.tosoengine, [])
+					assert(global.tosoengine.CACHE_KEYS.tosotest, [])
+					assert(global.tosoengine.CACHE_KEYS.application, ["state"])
+					assert(array_length(variable_struct_get_names(global.tosoengine.CACHE_KEYS)), 3)
 				},
 			},
 			//
