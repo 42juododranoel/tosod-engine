@@ -4,7 +4,7 @@ TOSOD engine is a game engine made by me on top of GameMaker Studio. It powers m
 
 What's inside:
 - [x] Django-like apps structure
-- [x] Pytest-inspired testing framework with paramerizing
+- [x] Pytest-inspired testing framework with paramerizing and dependency injection
 - [x] Redux-inspired store, mutations and rendering
 - [ ] ...
 
