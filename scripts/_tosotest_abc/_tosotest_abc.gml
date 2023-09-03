@@ -19,6 +19,9 @@ function TosotestApp(): App("tosotest") constructor {
 	collection = {
 		// Each test and parametrized signature is saved here
 		signatures: [],
+		// Fixture section
+		app_fixture_graph: {},
+		testsuit_fixture_graph: {},
 		// Statistics are used for informational UX purposes
 		statistics: {
 			app_count: 0,
@@ -68,5 +71,19 @@ function TosotestApp(): App("tosotest") constructor {
 		return [
 			get_tosotest_syntax_testsuit,
 		]
+	}
+
+	static get_fixtures = function() {
+		return {
+			app_fixture_1: function() {
+				return "app_fixture_1"
+			},
+		    app_fixture_2: {
+				depends: ["app_fixture_1"],
+				fixture: function(fixtures) {
+					return fixtures.app_fixture_1
+				}
+			}
+		}
 	}
 }

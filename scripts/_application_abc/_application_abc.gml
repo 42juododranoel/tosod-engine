@@ -38,10 +38,8 @@ function ApplicationApp(): App("application") constructor {
 
 	static get_fixtures = function() {
 		return {
-			application_started: {
-				fixture: function() {
-					global.apps.application.start()
-				},
+			application_started: function() {
+				global.apps.application.start()
 			}
 		}
 	}
