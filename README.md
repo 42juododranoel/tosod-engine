@@ -104,8 +104,8 @@ And can have postponed asserts:
 
 - [x] Create the `engine` app, with base app and framework structure to use later for every single component and piece of code
 - [x] Create the `application` app, responsible for storing all application-level constants and switching between `menu` and `game`  
-- [ ] (in progress) Create a testing framework THE RIGHT WAY (the Pytest way, with fixtures and parametrizing), because code without tests is legacy by design even in gamedev
-- [ ] Create the `menu` app, which should greet users and provide them with start/continue/exit features
+- [x] Create a testing framework THE RIGHT WAY (the Pytest way, with fixtures and parametrizing), because code without tests is legacy by design even in gamedev
+- [ ] (in progress) Create the `menu` app, which should greet users and provide them with start/continue/exit features
 - [ ] Create the `game` app, which should store everything related to plot progress, entities, locations and many other things
 - [ ] Create the `orders` app, which should execute scripted sequences, such as starting slideshows, commanding entities, changing locations, running dialogs, etc
 - [ ] Create the `location` app, which should render location, with tilesets and layers
@@ -127,6 +127,6 @@ Questions yet to be answered:
 - [x] tests inside testsuits inside apps
 - [x] pytest's parametrizing
 - [x] store and cache creation
-- [ ] pytest's fixtures
+- [x] pytest's fixtures
 - [x] switching rooms in tests (flat test signature array, enter test room before each test, run test after room was created, run assert on room start event, start next test immediately after)
 - [ ] menu app (new game, continue game, exit, load savefile, write savefile)
