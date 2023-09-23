@@ -28,7 +28,7 @@ What's inside:
 
 ### Tosoengine
 
-When you start a game, the GameMaker opens a home room (`room_tosoengine`). This room's creation code simply initializes two core apps: `TosoengineApp` and `TosotestApp`. After initializing tosoengine, it runs it. This is how the room creation code looks like:
+When you start a game, the GameMaker opens a home room `room_tosoengine`. This room's creation code simply initializes two core apps: `TosoengineApp` and `TosotestApp`. After initializing tosoengine, it runs it. This is how the room creation code looks like:
 
 ```
 // Create tosoengine and tosotest and run everything
