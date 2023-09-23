@@ -8,6 +8,16 @@ What's inside:
 - [x] Redux-inspired store, mutations and rendering
 - [ ] ...
 
+##### Table of Contents  
+- [Core Principles](#core-principles)  
+- [How Things Work](#how-things-work)
+  - [Tosoengine](#tosoengine)
+  - [Tosotest](#tosotest)
+  - [Application](#application)
+  - [Menu](#menu)
+- [Strategic Roadmap](#strategic-roadmap)
+- [Tactical Todolist](#tactical-todolist)
+
 ## Core Principles
 
 1. Every visual element displayed on the screen in each frame should be explicitly described using three types of storage: `store`, `cache` and `idmap`. It's not allowed to render any piece of code that isn't stored in one of these three categories, with the exception of `tosotest` and `application`.
