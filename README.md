@@ -37,8 +37,8 @@ global.tosotest = new TosotestApp()
 
 // Initialize apps mapping
 global.apps = {
-	tosoengine: global.tosoengine,
-	tosotest: global.tosotest,
+    tosoengine: global.tosoengine,
+    tosotest: global.tosotest,
 }
 
 // This is where the fun begins (c)
@@ -49,22 +49,22 @@ Tosoengine's start function populates `global.apps` struct with non-core apps, r
 
 ```
 static set_constants = function() {
-	// Set apps
-	global.apps.application = new ApplicationApp()
-	global.apps.menu = new MenuApp()
+    // Set apps
+    global.apps.application = new ApplicationApp()
+    global.apps.menu = new MenuApp()
 
-	// Set STORE_KEYS and CACHE_KEYS for apps
-	var app_names = variable_struct_get_names(global.apps)
-	for (var app_index = 0; app_index < array_length(app_names); app_index++) {			
-		var app_name = app_names[app_index]
-		var app = variable_struct_get(global.apps, app_name)
-			
-		var app_store_keys = variable_struct_get_names(app.get_store())
-		variable_struct_set(self.STORE_KEYS, app_name, app_store_keys)
+    // Set STORE_KEYS and CACHE_KEYS for apps
+    var app_names = variable_struct_get_names(global.apps)
+    for (var app_index = 0; app_index < array_length(app_names); app_index++) {            
+        var app_name = app_names[app_index]
+        var app = variable_struct_get(global.apps, app_name)
+            
+        var app_store_keys = variable_struct_get_names(app.get_store())
+        variable_struct_set(self.STORE_KEYS, app_name, app_store_keys)
 
-		var app_cache_keys = variable_struct_get_names(app.get_cache())
-		variable_struct_set(self.CACHE_KEYS, app_name, app_cache_keys)
-	}
+        var app_cache_keys = variable_struct_get_names(app.get_cache())
+        variable_struct_set(self.CACHE_KEYS, app_name, app_cache_keys)
+    }
 }
 ```
 
@@ -72,10 +72,10 @@ After that, tosoengine initializes three global storages: `store`, `cache` and `
 
 ```
 static set_variables = function() {
-	// Set storages
-	global.store = {}
-	global.cache = {}
-	global.idmap = {}
+    // Set storages
+    global.store = {}
+    global.cache = {}
+    global.idmap = {}
 }
 ```
 
@@ -83,13 +83,13 @@ Finally, it checks if game was run in debug mode or normal mode. Debug mode will
 
 ```
 static run_component = function() {
-	if debug_mode {
-		// Run tests
-		global.tosotest.start()
-	} else {
-		// Run game
-		global.apps.application.start()
-	}
+    if debug_mode {
+        // Run tests
+        global.tosotest.start()
+    } else {
+        // Run game
+        global.apps.application.start()
+    }
 }
 ```
 
