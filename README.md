@@ -28,7 +28,7 @@ What's inside:
 
 ### Tosoengine
 
-When you start a game, the GameMaker opens a home room `room_tosoengine`. This room's creation code simply initializes two core apps: `TosoengineApp` and `TosotestApp`. After initializing tosoengine, it runs it. This is how the room creation code looks like:
+When you start a game, the GameMaker opens a home room `room_tosoengine`. This room's creation code simply initializes two core apps: `TosoengineApp` and `TosotestApp`. After initializing tosoengine, room creation code runs it. This is how the room creation code looks like:
 
 ```
 // Create tosoengine and tosotest and run everything
@@ -134,9 +134,9 @@ execution = {
 }
 ```
 
-When tosotest is run, the first thing it does is collects tests by running `tosotest_collect` action. It starts by resolving globally-accessible app-level fixture dependency graph. Building a fixture graph means going through each defined fixture and recursively going through every dependency it has. The final result of this operation is a struct containing a tree that references all fixtures that are required to run a specific fixture. This graph is used before running each test. Tosotest executes fixtures one after another and injects the results of previous ones as arguments to the next ones.
+When tosotest is run, the first thing it does is collecting tests by running `tosotest_collect` action. It starts by resolving globally-accessible app-level fixture dependency graph. Building a fixture graph means going through each defined fixture and recursively going through every dependency it has. The final result of this operation is a struct containing a tree that references all fixtures that are required to run a specific fixture. This graph is used before running each test. Tosotest executes fixtures one after another and injects the results of previous ones as arguments to the next ones.
 
-An example of app-level fixtures that are accessible in other apps. Note that `app_fixture_2` uses `app_fixture_1` as a dependency, meaning that `app_fixture_1` will be executed before `app_fixture_2` and the result will be saved in `fixtures.app_fixture_1` argument:
+Below is an example of app-level fixtures that are accessible in other apps. Note that `app_fixture_2` will return `"app_fixture_1"` because it uses `app_fixture_1` as a dependency, meaning that `app_fixture_1` will be executed before `app_fixture_2` and the result will be saved in `fixtures.app_fixture_1` argument:
 
 ```
 // In app
@@ -180,7 +180,7 @@ function get_tosotest_syntax_testsuit() {
 }
 ```
 
-After testsuit fixtures are collected, tosotest collects each testsuit's test signatures. A `test` is a function that has a name and is a part of testsuit, a `signature` is a processed version of test that will be called during execution. One test may have more than one signature if it uses parametrization. The following test named `my_foobar_test` will generate two signatures: `my_foobar_test[2,2,4]` and `my_foobar_test[1,-1,0]`.
+After testsuit fixtures are collected, tosotest collects each testsuit's test signatures. A test is a function that has a name and is a part of testsuit, a signature is a processed version of test that will be called during execution. One test may have more than one signature if it uses parametrization. The following test named `my_foobar_test` will generate two signatures: `my_foobar_test[2,2,4]` and `my_foobar_test[1,-1,0]`.
 
 ```
 my_foobar_test: {
@@ -205,7 +205,7 @@ Collecting tests...
 Collected 15 tests in 4 testsuits across 3 apps.
 ```
 
-After collection stage is finished, an execution stage starts. Before we dive deeper, let's set this following test as an example. This test named `change_room` runs `global.apps.application.start()` (that changes room to `room_application`). It then defines a callback `on_room_start` that will be executed when the corresponding event happens. 
+After collection stage is finished, an execution stage starts. Before we dive deeper, let's set this following test as an example. This test named `change_room` runs `global.apps.application.start()` that changes room to `room_application`. It then defines a callback `on_room_start` that will be executed when the corresponding event happens. 
 
 ```
 change_room: {
@@ -264,7 +264,7 @@ function on_room_start(callback) {
 }
 ```
 
-Not let's look at `object_tosotest`'s room start event. When this event is fired, it runs callback that was defined in test function as an argument to `on_room_start`. If callback raises any exceptions, tosotests stops here and will not proceed to other potential event callbacks, marking this test as failed. If not exceptions were raises, tosotest checks if there are any other callbacks. If this one was the last, tosotests runs post-execute procedures.
+Now let's look at `object_tosotest`'s room start event. When this event is fired, it runs callback that were defined in test function as an argument to `on_room_start`. If callback raise any exceptions, tosotest stops here and will not proceed to other potential event callbacks, marking this test as failed. If not exceptions were raises, tosotest checks if there are any other callbacks. If this one was the last, tosotests runs post-execute procedures.
 
 ```
 var key = global.tosotest.EVENTS.ROOM_START
