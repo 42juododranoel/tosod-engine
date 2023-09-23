@@ -10,7 +10,7 @@ What's inside:
 
 ## Core Principles
 
-1. Every visual element displayed on the screen in each frame should be explicitly described using three types of storage: `store`, `cache` and `idmap`. It's not allowed to render any piece of code that isn't stored in one of these three categories, with the exception of `tosotest`.
+1. Every visual element displayed on the screen in each frame should be explicitly described using three types of storage: `store`, `cache` and `idmap`. It's not allowed to render any piece of code that isn't stored in one of these three categories, with the exception of `tosotest` and `application`.
 
 2. Any changes to the `store`, `cache` or `idmap` should not be made on the fly. Instead, they should be represented as queries, such as `mutate`, `imutate`, `remember` and `iremember`.
 
@@ -344,7 +344,41 @@ Passed: 15
 Failed: 0
 ```
 
-## Application
+### Application
+
+When application is started, it switches room to `room_application` and spawns an `object_application` that will intercept and most events.
+
+```
+static run_component = function() {
+    room_goto(room_application)
+}
+
+static postrun_component = function() {
+    // Create app object that will run most events
+    instance_create_layer(0, 0, ENGINE_LAYER, object_application)
+
+    // Start the game menu
+    application_start_menu()
+}
+```
+
+After that, application runs action `application_start_menu` that will switch application state to `MENU` and run corresponding app.
+
+```
+function application_start_menu() {
+    // 1. Set state and initials
+
+    var memory = {state: global.apps.application.STATES.MENU}
+    remember(global.apps.application, "application_start_menu", memory)
+	
+
+    // 2. Start child
+    
+    global.apps.menu.start()
+}
+```
+
+### Menu
 
 TBD.
 
