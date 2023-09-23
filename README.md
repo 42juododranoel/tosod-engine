@@ -45,7 +45,7 @@ global.apps = {
 global.tosoengine.start()
 ```
 
-Tosoengine's start function populates `global.apps` struct with non-core apps, reads each app's `get_store` and `get_cache`, sets the results in `self.STORE_KEYS` and `self.CACHE_KEYS`. These two arrays will be used to validate `mutation` and `remember` queries later.
+Tosoengine's start function populates `global.apps` struct with non-core apps, reads each app's `get_store` and `get_cache`, sets the results in `self.STORE_KEYS` and `self.CACHE_KEYS`. These two arrays will be used to validate `mutate` and `remember` queries later.
 
 ```
 static set_constants = function() {
