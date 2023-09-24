@@ -422,4 +422,4 @@ Questions yet to be answered:
 - [x] store and cache creation
 - [x] pytest's fixtures
 - [x] switching rooms in tests (flat test signature array, enter test room before each test, run test after room was created, run assert on room start event, start next test immediately after)
-- [ ] menu app (new game, continue game, exit, load savefile, write savefile)
+- [ ] menu app (render items, new/continue game switch based on the presence of savefile, new/start callback, exit callback, load savefile, write savefile, menu font, background, music)
