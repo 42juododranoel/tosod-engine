@@ -399,6 +399,7 @@ TBD.
 - [x] Create the `application` app, responsible for storing all application-level constants and switching between `menu` and `game`  
 - [x] Create a testing framework THE RIGHT WAY (the Pytest way, with fixtures and parametrizing), because code without tests is legacy by design even in gamedev
 - [ ] (in progress) Create the `menu` app, which should greet users and provide them with start/continue/exit features
+- [ ] (in progress) Create a framework to separate different projects with default project being available over overriding
 - [ ] Create the `game` app, which should store everything related to plot progress, entities, locations and many other things
 - [ ] Create the `orders` app, which should execute scripted sequences, such as starting slideshows, commanding entities, changing locations, running dialogs, etc
 - [ ] Create the `location` app, which should render location, with tilesets and layers
@@ -423,3 +424,4 @@ Questions yet to be answered:
 - [x] pytest's fixtures
 - [x] switching rooms in tests (flat test signature array, enter test room before each test, run test after room was created, run assert on room start event, start next test immediately after)
 - [ ] menu app (render items, new/continue game switch based on the presence of savefile, new/start callback, exit callback, load savefile, write savefile, menu font, background, music)
+- [ ] content separation (I should be able to work on proprietary TOSOD game content whily by default TOSOD engine features free and open source content)
